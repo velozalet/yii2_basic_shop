@@ -1,0 +1,58 @@
+CREATE TABLE category(
+id int primary key auto_increment,
+name varchar(100),
+parent_id int,
+description text,
+meta_description varchar(256),
+meta_keywords varchar(150)
+);
+
+
+CREATE TABLE product(
+id int primary key auto_increment,
+name varchar(100),
+category_id int,
+price float,
+description text,
+stock ENUM('0','1'),
+new ENUM('0','1'),
+sale ENUM('0','1'),
+meta_description varchar(256),
+meta_keywords varchar(150),
+FOREIGN KEY (category_id) REFERENCES category(id)
+);
+
+
+
+//наполняем таблицу category
+INSERT INTO category(name, parent_id, description)
+VALUES ('Одежда', '0', 'Описание категории Одежда');
+
+INSERT INTO category(name, parent_id, description)
+VALUES ('Обувь', '0', 'Описание категории Обувь');
+
+INSERT INTO category(name, parent_id, description)
+VALUES ('Женская Одежда', '1', 'Описание категории Женская Одежда');
+
+INSERT INTO category(name, parent_id, description)
+VALUES ('Мужская Одежда', '1', 'Описание категории Мужская Одежда');
+
+INSERT INTO category(name, parent_id, description)
+VALUES ('Женская Обувь', '2', 'Описание категории Женская Обувь');
+
+INSERT INTO category(name, parent_id, description)
+VALUES ('Мужская Обувь', '2', 'Описание категории Мужская Обувь');
+
+
+//наполняем таблицу product
+INSERT INTO product(name, category_id, price)
+VALUES ('Платье-1', '3', '450');
+
+INSERT INTO product(name, category_id, price)
+VALUES ('Платье-2', '3', '550');
+
+INSERT INTO product(name, category_id, price)
+VALUES ('Свитер', '4', '200');
+
+INSERT INTO product(name, category_id, price)
+VALUES ('Брюки', '4', '320');
