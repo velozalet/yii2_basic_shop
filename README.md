@@ -52,3 +52,20 @@ environments/            contains environment-based overrides
 tests                    contains various tests for the advanced application
     codeception/         contains tests developed with Codeception PHP Testing Framework
 ```
+==========================================
+
+**DESCRIPTION THIS PROJECT:**
+
+- Yii2(basic version);
+- Custom Интернет-магазин на Yii2 - базовый функционал.
+- авторизация/регистрация;
+- Вывод товаров
+  - покупка товаров -> корзина Пользователя(сессия), 
+  - подсчет общей стоимости купленных товаров в пределах заказа, 
+   - удаление товаров из корзины
+
+  - BACK-END:
+  - есть
+  - добавление/редактирование/удаление товара
+    
+... в процессе...
